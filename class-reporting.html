@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app=teachers>
 
 <head>
 
@@ -34,7 +34,7 @@
 
 </head>
 
-<body>
+<body ng-controller="MainController">
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -97,86 +97,17 @@
       form responses.
     </p>
 
-    <ul>
-      <li> Monday 5:00pm-6:30pm, Level 1, Carmel Valley
+    <div>
+      <div ng-repeat="classData in classList track by $index">
         <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/18GQuBVCxSMgfcS-9oxYqt41-aByZG3JZE9lpbntYU7s/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1tpIPaEIdWIR67gqboagefqhbrJjdnAkRWB9EfOPiTsg">Class Progress</a></li>
+          <li> {{classData.time}}, Level {{classData.level}}, {{classData.location}}, {{classData.teacher}}
+            <ul>
+              <li><a class="a-league" ng-href="{{classData.Form_URL}}">Class Report Form</a></li>
+            </ul>
+          </li>
         </ul>
-      </li>
-      <li> Tuesday 3:30pm-5:00pm, Level 1, Carmel Valley
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/1BNgN_jUKCSxL6e02qH-vVXMhPzPJoM9RJBv_YX7d3gE/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1LHTujvNJvXVF55XcAPWwF4XQ2iOKWF-FSUvDFZoZ5Ko">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Tuesday 5:00pm-6:30pm, Level 1, Carmel Valley
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/1ZnO9rL3R-bOystv0HongTcHBcMe9ACkMx8bbhcO0Z04/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Wednesday 3:30pm-5:00pm, Level 1, Carmel Valley
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/1-C-HIXXz8oYTffW4-w2l80PQEt6C0ietme6_-ROQyg0/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1smTqoINTDIlqqtQFN98SmJ9ZBueaiD-mrtCVHJLXTNc/">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Wednesday 4:00pm-5:30pm, Level 0, Downtown Library
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/a/jointheleague.org/forms/d/1nMrFKt1DADtjkIDas-P_HNfTn6UQxKWqY9MaN4RBZEA">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1lU1mMbku1RTnDSS7vxgI_3EZfhzD0-Q9u8ZasDIPruE">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Wednesday 5:00pm-6:30pm, Level 4, Carmel Valley
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/1HOd_Q8g_6KjSnud6_oL-LHWByOL_a5ESBUiGJ8B9RN8/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/12PHwy0Csy9ksGwgossXA9TTVj5zz8qBQS8vl_bO2TnQ">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Wednesday 5:00pm-6:30pm, Level 1, Carmel Valley
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/1jjoUlqcQqDoNneMLCnhnylvGQDNLpDx2EoY7kxnOa1Y/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1vncew5ToFboOwx2vsJDMkLBZPu1yhAhAxZlPVjwxgSQ">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Wednesday 6:30pm-8:00pm, Level 1
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/175irm8R3s2DVNn2B4nKa1KD26hqog-G3YM2ou1Rujb0/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1-zcgskx4qldmFULW6dDgI6v9S3D3z8tN_RH1oSYvDJ4">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Monday 5:00pm-6:30pm, Level 1
-        <ul>
-          <li><a class="a-league" href="">Class Report Form</a></li>
-          <li><a class="a-league" href="">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Monday 5:00pm-6:30pm, Level 1
-        <ul>
-          <li><a class="a-league" href="">Class Report Form</a></li>
-          <li><a class="a-league" href="">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Monday 5:00pm-6:30pm, Level 1
-        <ul>
-          <li><a class="a-league" href="">Class Report Form</a></li>
-          <li><a class="a-league" href="">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Monday 5:00pm-6:30pm, Level 1
-        <ul>
-          <li><a class="a-league" href="">Class Report Form</a></li>
-          <li><a class="a-league" href="">Class Progress</a></li>
-        </ul>
-      </li>
-      <li> Saturday 11:00am-12:30pm, Level 3
-        <ul>
-          <li><a class="a-league" href="https://docs.google.com/forms/d/1oW0AK_jDHuCOPvpM7S1nitcdhYgJ-Aq3FGV_5zS3gyU/viewform?usp=send_form">Class Report Form</a></li>
-          <li><a class="a-league" href="https://docs.google.com/spreadsheets/d/1ktKQH3yRf2uZxxa9insYwa1n9t7DuMoFCJ7bFJEw6ic">Class Progress</a></li>
-        </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -200,6 +131,17 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="js/clean-blog.min.js"></script>
+
+<!-- Angular -->
+<script src="lib/angular/angular.js"></script>
+
+<!-- Tabletop.js -->
+<script src="lib/tabletop/tabletop.js"></script>
+
+<!-- App -->
+<script src="app/app.js"></script>
+<script src="app/services/services.js"></script>
+<script src="app/controllers/controllers.js"></script>
 
 </body>
 
