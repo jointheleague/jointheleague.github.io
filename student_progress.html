@@ -1,0 +1,22 @@
+<html>
+
+
+<h1>UNDER CONSTRUCTION</h1>
+<div id='div'>
+</div>
+</html>
+
+<script>
+	window.onload = function(){
+		var div = document.getElementById('div');
+		
+		var xmlHttp = new XMLHttpRequest();
+   	    xmlHttp.open("GET", "pike13.com/api/v2/account", true);
+    	xmlHttp.send();
+    	xmlHttp.onreadystatechange = function() {
+    		if(xmlHttp.readyState === XMLHttpRequest.DONE && xmlHttp.status === 200) {
+    			div.innerHTML = xmlHttp.responseText;
+ 			}
+   		}
+	}
+</script>
